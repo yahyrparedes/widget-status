@@ -1,0 +1,172 @@
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    style="@style/Widget.WidgetStatus.AppWidget.Container"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:theme="@style/Theme.WidgetStatus.AppWidgetContainer">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/appwidget_text"-->
+<!--        style="@style/Widget.WidgetStatus.AppWidget.InnerView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:contentDescription="@string/appwidget_text"-->
+<!--        android:text="@string/appwidget_text"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold|italic" />-->
+<!--</RelativeLayout>-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="150dp"
+android:layout_height="150dp"
+android:background="@drawable/background_widget"
+android:gravity="center_horizontal"
+android:orientation="vertical"
+android:padding="@dimen/space_10"
+android:id="@+id/kwemaWidget"
+android:theme="@style/Theme.WidgetStatus.AppWidgetContainer">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/space_5">
+
+        <TextView
+            android:id="@+id/appwidget_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Not Covered"
+            android:textColor="@color/colorApp"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="by Kwema"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorApp"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/isotype"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:contentDescription="Kwema Status"
+        android:elevation="6dp"
+        android:scaleType="center"
+        android:src="@drawable/widget_shield" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/body"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/space_5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/blue"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:contentDescription="TODO"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/widget_blue" />
+
+        <TextView
+            android:id="@+id/txtBlue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunito_bold"
+            android:scaleType="center"
+            android:text="Bluetooth"
+            android:textColor="@color/colorMainDarkText"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/gps"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:contentDescription="TODO"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/widget_gps" />
+
+        <TextView
+            android:id="@+id/txtGps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunito_bold"
+            android:text="GPS"
+            android:textColor="@color/colorMainDarkText"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/data"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:contentDescription="TODO"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/widget_data" />
+
+        <TextView
+            android:id="@+id/txtData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Mobile Data"
+            android:textColor="@color/colorMainDarkText"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>
+
+
+
