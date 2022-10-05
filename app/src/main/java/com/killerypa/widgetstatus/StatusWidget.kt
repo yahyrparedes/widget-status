@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -152,10 +153,13 @@ class StatusWidget : AppWidgetProvider() {
         }
     }
 
-    private fun getStatusBlue() {
+    private fun getStatusBlue(context: Context) {
         try {
-            val mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-            blueGlobal = mBluetoothAdapter?.isEnabled ?: false
+            val bluetoothManager =
+                context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+            val mBluetoothAdapter = bluetoothManager.adapter
+//            val mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+            blueGlobal = mBluetoothAdapter.isEnabled
         } catch (e: Exception) {
             Log.e(TAG, "getStatusBlue => " + e.message.toString())
         }
@@ -172,7 +176,7 @@ class StatusWidget : AppWidgetProvider() {
     }
 
     private fun getStatusAll(context: Context) {
-        getStatusBlue()
+        getStatusBlue(context)
         getStatusGps(context)
         getStatusData(context)
     }
@@ -189,7 +193,6 @@ internal fun updateAppWidget(
     // Construct the RemoteViews object
     val views = RemoteViews(context.packageName, R.layout.status_widget)
     views.setTextViewText(R.id.appwidget_text, widgetText)
-
 
 
     val intent = Intent(context, MainActivity::class.java)
